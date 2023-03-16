@@ -70,17 +70,17 @@ function determineWinningCombo (event, computerChoice) {
   if (userWin.includes(currentPlay)) {
     const span = createSpanElement('beats');
     resultsContainer.appendChild(span);
-    console.log('win');
+
     scores.you += 1;
   } else if (ties.includes(currentPlay)) {
     const span = createSpanElement('ties');
     resultsContainer.appendChild(span);
-    console.log('tie');
+
     scores.draw += 1;
   } else {
     const span = createSpanElement('loses to');
     resultsContainer.appendChild(span);
-    console.log('lose');
+
     scores.comp += 1;
   }
 
@@ -90,7 +90,6 @@ function determineWinningCombo (event, computerChoice) {
 
 function updateScores () {
   for (let score in scores) {
-    console.log(`${score}: ${scores[score]}`);
     const player = document.querySelector(`.${score}`);
     const spanElement = document.createElement('span');
     spanElement.appendChild(document.createTextNode(scores[score]));
@@ -105,7 +104,7 @@ function createSpanElement (symbol) {
   const spanElement = document.createElement('span');
   spanElement.appendChild(document.createTextNode(symbol));
   spanElement.setAttribute('class', 'glow');
-  console.log(spanElement);
+
   return spanElement;
 }
 
