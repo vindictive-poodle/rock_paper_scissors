@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gajraj+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Blaka&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background-color: #17141F;
+  --foreground-color: #ECF0C1;
+  --highlight-color: #308DB8;
+  --yellow: #E6C62F;
+  --orange: #E07D13;
+  --lightBlue: #39DCDC;
+  --mutedBlue: #56B6C2;
+  --midBlue: #314365;
+  --lightPink: #E06C75;
+  --berryPink: hsl(317 100% 54%);
+  --red: #C24038;
+  --gitGreen: #29e7ae;
+  --grey: #151920;
+  --lightGrey: #2C313A;
+  --midPurple: #625576;
+  --menuPurple: #1A1824;
+  --pureBlack: #000;
+  --rock-bg-color: var(--berryPink);
+  --paper-bg-color: var(--gitGreen);
+  --scissors-bg-color: var(--orange);
+}
+
+html {
+  font-family: 'Press Start 2P', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--berryPink);
+  padding: 1rem 1.8rem;
+  justify-content: space-evenly;
+  /* border: 20px solid var(--berryPink); */
+}
+
+.container,
+.results,
+.players,
+.message {
+  text-align: center;
+}
+.results,
+.message {
+  font-size: 1rem;
+  min-height: min(1vw + 1rem, 10rem);
+}
+
+.results > span {
+  color: var(--yellow);
+}
+
+.header,
+.footer {
+  position: absolute;
+  height: calc(1.8rem + .7vh);
+  width: 100%;
+  background-color: var(--yellow);
+  left: 0;
+  right: 0;
+}
+
+.header {
+  top: 0;
+}
+
+.footer {
+  bottom: 0;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  column-gap: calc(1.5rem + 2vw);
+  row-gap: calc(1.5rem + 1vh);
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 50px;
+}
+
+.option { 
+  font-size: min(1vw + 1rem, 10rem); 
+}
+
+.players {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(1rem + 2vw);
+  align-self: center;
+  justify-content: center;
+  color: var(--berryPink);
+  font-size: min(1vw + .5rem, 4rem);
+}
+
+.player {
+  display: inline-block;
+  padding: 1em 5em;
+  border: 3px solid var(--yellow);
+}
+
+
+.rock,
+.paper,
+.scissors {
+  flex-shrink: 0;
+}
+
+.rock {
+  color: var(--rock-bg-color);
+}
+
+.paper {
+  color: var(--paper-bg-color);
+}
+
+.scissors {
+  color: var(--scissors-bg-color);
+}
+
+.glow {
+  text-shadow: 
+  0 0 0.125em hsl(0 0% 100% / .5), 0 0 .5em currentColor;
+}
+
+.option.glow {
+  box-shadow: 0 0 0.5em 0 currentColor;
+}
+
+.option {
+  display: inline-block;
+  border: 0.085em solid currentColor;
+  border-radius: .25em;
+  cursor: pointer;
+  padding: .3em 1em;
+  min-width: 30%;
+}
+
+.option:hover {
+  color: hsl(0 0% 100% / .5);
+}
+
+.rock:hover {
+  background-color: var(--rock-bg-color);
+}
+
+.paper:hover {
+  background-color: var(--paper-bg-color);
+}
+
+.scissors:hover {
+  background-color: var(--scissors-bg-color);
+}
+
+.option:active {
+  transform: scale(90%);
+}
+
+
