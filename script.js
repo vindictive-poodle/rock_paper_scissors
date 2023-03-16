@@ -27,7 +27,7 @@ function gameOver () {
     count += scores[score];
   }
 
-  if (count === 3) return true;
+  if (count === 5) return true;
   else return false;
 }
 
