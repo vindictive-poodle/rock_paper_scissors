@@ -94,6 +94,7 @@ function updateScores () {
     const player = document.querySelector(`.${score}`);
     const spanElement = document.createElement('span');
     spanElement.appendChild(document.createTextNode(scores[score]));
+    spanElement.setAttribute('class', 'glow');
     while (player.firstChild) player.removeChild(player.firstChild);
     player.appendChild(document.createTextNode(`${score[0].toUpperCase() + score.substr(1)}: `));
     player.appendChild(spanElement);
@@ -115,3 +116,5 @@ function computerSelection () {
 function getRandomNumber () {
   return Math.floor(Math.random() * options.length);
 }
+
+updateScores();

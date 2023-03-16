@@ -61,7 +61,7 @@ body {
   min-height: min(1vw + 1rem, 10rem);
 }
 
-.results > span {
+span {
   color: var(--yellow);
 }
 
@@ -109,8 +109,9 @@ body {
 
 .player {
   display: inline-block;
-  padding: 1em 5em;
+  padding: 1em 3em;
   border: 3px solid var(--yellow);
+  flex-grow: 1;
 }
 
 
