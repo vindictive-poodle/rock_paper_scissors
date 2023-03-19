@@ -40,36 +40,18 @@ html {
 }
 
 body {
-  
+  display: flex;
   flex-direction: column;
   min-height: 100vh;
   background-color: var(--background-color);
   color: var(--berryPink);
   padding: 1rem 1.8rem;
-  justify-content: space-evenly;
-  
-}
-
-.container,
-.results,
-.players,
-.message {
   text-align: center;
 }
 
-.results,
-.message {
-  font-size: 1rem;
-  padding: 3rem var(--left-right-padding);
-}
-
-span {
-  color: var(--yellow);
-}
-
+/* Header & Footer details */
 .header,
 .footer {
-  position: absolute;
   height: calc(1.8rem + .7vh);
   width: 100%;
   background-color: var(--yellow);
@@ -78,52 +60,104 @@ span {
 }
 
 .header {
+  position: absolute;
   top: 0;
 }
 
 .footer {
+  position: fixed;
   bottom: 0;
 }
+/* ----------------------- */
 
+
+/* body's flex item declarations go here */
 .container {
+  flex-grow: 5;
+
   display: flex;
-  width: 100%;
-  column-gap: calc(1.5rem + 2vw);
-  row-gap: calc(1.5rem + 1vh);
   justify-content: center;
   flex-wrap: wrap;
-  padding: 20vh var(--left-right-padding) 8vh var(--left-right-padding);
+  column-gap: 2vw;
+  align-content: space-evenly;
 }
 
-.option { 
-  font-size: min(1vw + 1rem, 10rem); 
+.results {
+  flex-grow: 1;
+
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
 }
 
 .players {
-  display: flex;
-  flex-wrap: wrap;
-  gap: calc(1rem + 2vw);
-  align-self: center;
+  flex-grow: 3;
+
+  flex-direction: column;
   justify-content: center;
-  color: var(--berryPink);
-  font-size: min(1vw + .5rem, 4rem);
+  align-items: center;
+  row-gap: 2vh;
 }
 
-.player {
+.message {
+  flex-grow: 3;
+}
+
+.container,
+.players,
+.message {
   display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 1em var(--left-right-padding);
-  border: 3px solid var(--yellow);
-  flex-grow: 1;
-  flex-basis: 0;
 }
 
 
 .rock,
 .paper,
 .scissors {
-  flex-shrink: 0;
+  flex-grow: 1;
+  flex-basis: 0;
+  padding: 1vw 0;
+}
+
+.scissors {
+  flex-shrink: 2;
+}
+
+
+.player {
+  width: 60%;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+}
+
+.message {
+  justify-content: center;
+  align-items: center;
+
+  min-height: 20vh;
+}
+
+/* ------------------------------------- */
+
+
+/* Style & Transitions Declarations go here */
+span {
+  color: var(--yellow);
+}
+
+.option { 
+  font-size: 1rem;
+  border: 0.085em solid currentColor;
+  border-radius: .25em;
+  cursor: pointer;
+}
+
+.players {
+  color: var(--berryPink);
+  font-size: min(1vw + .5rem, 4rem);
+}
+
+.player {
+  border: 3px solid var(--yellow);
 }
 
 .rock {
@@ -147,14 +181,6 @@ span {
   box-shadow: 0 0 0.5em 0 currentColor;
 }
 
-.option {
-  display: inline-block;
-  border: 0.085em solid currentColor;
-  border-radius: .25em;
-  cursor: pointer;
-  padding: .3em 1em;
-  min-width: 30%;
-}
 
 .option:hover {
   color: hsl(0 0% 100% / .5);
@@ -175,5 +201,4 @@ span {
 .option:active {
   transform: scale(90%);
 }
-
-
+/* ---------------------------- */
