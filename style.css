@@ -45,7 +45,7 @@ body {
   min-height: 100vh;
   background-color: var(--background-color);
   color: var(--berryPink);
-  padding: 1rem 1.8rem;
+  padding: calc(1.8rem + .7vh) 1.8rem;
   text-align: center;
 }
 
@@ -72,6 +72,12 @@ body {
 
 
 /* body's flex item declarations go here */
+.container,
+.players,
+.message {
+  display: flex;
+}
+
 .container {
   flex-grow: 5;
 
@@ -79,7 +85,8 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   column-gap: 2vw;
-  align-content: space-evenly;
+  row-gap: 2vh;
+  align-content: center;
 }
 
 .results {
@@ -87,7 +94,7 @@ body {
 
   justify-content: center;
   align-items: center;
-  min-height: 10vh;
+ flex-basis: 10vh; /* Use flex basis rather than min-height: 10vh*/
 }
 
 .players {
@@ -100,15 +107,11 @@ body {
 }
 
 .message {
-  flex-grow: 3;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 0;
 }
-
-.container,
-.players,
-.message {
-  display: flex;
-}
-
 
 .rock,
 .paper,
@@ -128,14 +131,6 @@ body {
   padding-top: 2vh;
   padding-bottom: 2vh;
 }
-
-.message {
-  justify-content: center;
-  align-items: center;
-
-  min-height: 20vh;
-}
-
 /* ------------------------------------- */
 
 
@@ -145,12 +140,17 @@ span {
 }
 
 .option { 
-  font-size: 1rem;
+  /* font-size: 1rem; */
   border: 0.085em solid currentColor;
   border-radius: .25em;
   cursor: pointer;
 }
 
+.results,
+.message,
+.option {
+  font-size: calc(.5vw + 1.3rem);
+}
 .players {
   color: var(--berryPink);
   font-size: min(1vw + .5rem, 4rem);
