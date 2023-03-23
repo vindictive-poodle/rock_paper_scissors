@@ -94,7 +94,7 @@ body {
 
   justify-content: center;
   align-items: center;
- flex-basis: 10vh; /* Use flex basis rather than min-height: 10vh*/
+  flex-basis: 10vh; /* Use flex basis rather than min-height: 10vh*/
 }
 
 .players {
